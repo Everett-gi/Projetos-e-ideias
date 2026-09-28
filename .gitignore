@@ -1,0 +1,52 @@
+# =====================================================================
+# .gitignore do monorepo — vale para TODAS as pastas do repositório.
+# Um projeto pode ter um .gitignore próprio com regras extras (ex.: o
+# gerado pelo Rails ou pelo Spring Initializr).
+# =====================================================================
+
+# ---------- Segredos (nunca versionar) ----------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+python/*/build/
+python/*/dist/
+
+# ---------- Java (saída de build) ----------
+*.class
+java/*/target/
+java/*/build/
+java/*/.gradle/
+
+# ---------- Ruby (saída local) ----------
+ruby/*/.bundle/
+ruby/*/vendor/bundle/
+ruby/*/log/
+ruby/*/tmp/
+ruby/*/storage/
+
+# ---------- Banco local / dumps ----------
+pgdata/
+*.dump
+
+# ---------- IDE / Sistema Operacional ----------
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
