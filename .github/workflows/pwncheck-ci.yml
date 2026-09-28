@@ -13,6 +13,8 @@ on:
     paths:
       - "python/pwncheck/**"
       - ".github/workflows/pwncheck-ci.yml"
+  # Botão "Run workflow" na aba Actions: roda o CI na hora, sem precisar de um push.
+  workflow_dispatch:
 
 # Menor privilégio: o token do workflow só pode LER o repositório.
 permissions:
