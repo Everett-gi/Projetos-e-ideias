@@ -1,11 +1,30 @@
-# Roda lint, testes e scans de segurança a cada push/PR na branch main.
-name: CI
+# CI do DocSage: lint, testes e scans de segurança.
+#
+# Monorepo: o GitHub só lê workflows em /.github/workflows (na RAIZ do repositório),
+# por isso este arquivo fica aqui e não dentro de python/docsage/. O filtro "paths"
+# faz o workflow rodar apenas quando algo do DocSage (ou este arquivo) muda.
+name: DocSage CI
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - "python/docsage/**"
+      - ".github/workflows/docsage-ci.yml"
   pull_request:
     branches: [ main ]
+    paths:
+      - "python/docsage/**"
+      - ".github/workflows/docsage-ci.yml"
+
+# Menor privilégio: o token do workflow só pode LER o repositório.
+permissions:
+  contents: read
+
+# Todos os comandos "run" executam dentro da pasta do projeto.
+defaults:
+  run:
+    working-directory: python/docsage
 
 jobs:
   test:
@@ -13,13 +32,14 @@ jobs:
 
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configurar Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: python/docsage/requirements.txt
 
       # Os testes cobrem apenas funções puras (app/text_utils.py), então instalamos
       # só o necessário — evita baixar PyTorch (~2 GB) a cada execução do CI.
@@ -37,10 +57,10 @@ jobs:
 
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configurar Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 

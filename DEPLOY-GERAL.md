@@ -15,7 +15,8 @@ Resumo do fluxo, uma vez que a VM já existe:
 
 ```bash
 ssh docsage                                   # conecta na VM
-git clone https://github.com/SEU_USUARIO/<projeto>.git && cd <projeto>
+git clone https://github.com/Everett-gi/Projetos-e-ideias.git
+cd Projetos-e-ideias/python/<projeto>        # monorepo: entre na pasta do projeto
 nano .env                                      # .env de PRODUÇÃO, criado aqui (não vem do Git)
 chmod 600 .env
 docker compose -f docker-compose.prod.yml up -d --build

@@ -5,16 +5,21 @@
 
 ## Organização
 
+Todos os projetos vivem **neste repositório** (um *monorepo*).
+
 ```
-portfolio/
+Projetos-e-ideias/
 ├── README.md            (este arquivo — convenções compartilhadas)
+├── CLAUDE.md            (contexto do repositório para o Claude Code)
 ├── DEPLOY-GERAL.md      (deploy compartilhado na Oracle Cloud + notas por linguagem)
+├── tutorial/            (trilha de aprendizado — comece por tutorial/README.md)
+├── .github/workflows/   (CI de TODOS os projetos: um <projeto>-ci.yml para cada)
 ├── java/                (backends de segurança — Spring Boot)
 │   ├── authhub/         · securebank/  · secvault/   · siem-lite/
 │   └── audittrail/      · gatekeeper/  · helpdesk/    · linkshield/
 ├── python/              (ferramentas de segurança + IA — FastAPI)
 │   ├── docsage/  ✅      · threatscope/ · reconkit/    · portpulse/
-│   └── loglens/         · phishguard/  · pwncheck/     · filesentry/
+│   └── loglens/         · phishguard/  · pwncheck/ 🚧  · filesentry/
 └── ruby/                (produtos web — Rails)
     ├── devforum/        · publicms/    · mercadolite/  · flowboard/
     └── edupath/         · agendaja/    · rachaconta/    · chatroom/
@@ -24,21 +29,28 @@ Cada pasta de projeto tem um **`CLAUDE.md`**: o handoff completo (o que é, stac
 modelo de dados, funcionalidades, segurança e plano de build). O DocSage já está
 **construído por inteiro** e serve de referência viva para todos os outros.
 
+## Trilha de aprendizado
+
+Os projetos são construídos em **modo tutorial**: cada fase concluída vira uma lição
+explicando o que foi feito e por quê. O índice completo, na ordem de estudo, está em
+**[tutorial/README.md](tutorial/README.md)**.
+
 ## Status
 
 | Projeto | Linguagem | Status |
 |---|---|---|
 | DocSage | Python | ✅ Completo |
-| Todos os demais (23) | — | 📋 Blueprint pronto (a construir) |
+| PwnCheck | Python | 🚧 Em construção |
+| Todos os demais (22) | — | 📋 Blueprint pronto (a construir) |
 
 ## Como cada projeto é construído (fluxo)
 
 1. **Ler o `CLAUDE.md`** do projeto — ele é o mapa.
-2. **Scaffold a partir do template** (`../../../projeto-template`), que traz `.gitignore`,
-   `.dockerignore`, `docker-compose.yml`, CI e os `Dockerfile.<linguagem>`. Copie o
-   Dockerfile da linguagem certa para `Dockerfile`.
+2. **Scaffold** da estrutura seguindo o DocSage como referência (`app/`, `tests/`,
+   `pyproject.toml`, `requirements.txt`...). Cada arquivo de configuração é explicado na
+   lição correspondente — nada de copiar template sem entender.
 3. **Construir com o Claude Code** dentro da pasta do projeto, seguindo as fases do build.
-4. **Testar** localmente (`docker compose up`), versionar no GitHub.
+4. **Testar** localmente (`pytest`, depois `docker compose up`) e versionar neste repositório.
 5. **Publicar** seguindo o `DEPLOY-GERAL.md`.
 
 > **Um projeto por vez, do começo ao fim.** Um portfólio de 4 projetos completos e no ar
@@ -81,8 +93,11 @@ Isto é o "Definition of Done" de segurança de qualquer projeto aqui:
 - Type hints / tipos explícitos sempre.
 - Toda função pura nova vem acompanhada de teste.
 - Mensagens de erro da API em português (é o usuário que lê).
-- Commits no padrão *Conventional Commits*: `feat:`, `fix:`, `chore:`, `docs:`, `test:`.
-- Cada projeto é um **repositório Git próprio** no GitHub.
+- Commits no padrão *Conventional Commits*, com o projeto como escopo:
+  `feat(pwncheck): ...`, `fix(docsage): ...`, `docs: ...`, `test: ...`, `ci: ...`, `chore: ...`.
+- **Monorepo:** cada projeto tem seu próprio workflow em `.github/workflows/<projeto>-ci.yml`
+  (o GitHub só lê workflows na raiz), filtrado por `paths:` para rodar só quando a pasta
+  daquele projeto muda.
 
 ## Sugestão de ordem
 
