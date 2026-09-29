@@ -16,14 +16,14 @@ Projetos-e-ideias/
 ├── DEPLOY-GERAL.md      (deploy compartilhado na Oracle Cloud + notas por linguagem)
 ├── tutorial/            (trilha de aprendizado — comece por tutorial/README.md)
 ├── java/                (blueprints: backends de segurança — Spring Boot)
-│   ├── authhub/         · securebank/  · secvault/   · siem-lite/
-│   └── audittrail/      · gatekeeper/  · helpdesk/    · linkshield/
+│   ├── securebank/      · siem-lite/   · audittrail/
+│   └── gatekeeper/      · helpdesk/    · linkshield/
 ├── python/              (blueprints: ferramentas de segurança + IA — FastAPI)
-│   ├── threatscope/     · reconkit/    · portpulse/
-│   └── loglens/         · phishguard/  · filesentry/
+│   ├── threatscope/     · portpulse/   · filesentry/
+│   └── loglens/         · phishguard/
 └── ruby/                (blueprints: produtos web — Rails)
-    ├── devforum/        · publicms/    · mercadolite/  · flowboard/
-    └── edupath/         · agendaja/    · rachaconta/    · chatroom/
+    ├── devforum/        · publicms/    · flowboard/    · chatroom/
+    └── edupath/         · agendaja/    · rachaconta/
 ```
 
 Cada pasta de blueprint tem um **`CLAUDE.md`**: o handoff completo (o que é, stack,
@@ -37,7 +37,17 @@ esse `CLAUDE.md` vai para o repositório dele e a pasta sai daqui (receita na
 |---|---|---|---|
 | DocSage | Python | [Everett-gi/docsage](https://github.com/Everett-gi/docsage) | ✅ Completo — referência de qualidade para os outros |
 | PwnCheck | Python | [Everett-gi/pwncheck](https://github.com/Everett-gi/pwncheck) | 🚧 Em construção (fase 1 de 6) |
-| Todos os demais | — | — | 📋 Blueprint pronto, nesta central |
+| AuthHub | Java | [Everett-gi/authhub](https://github.com/Everett-gi/authhub) | 📋 Blueprint no repositório — construção começando |
+| SecVault | Java | [Everett-gi/secvault](https://github.com/Everett-gi/secvault) | 📋 Blueprint no repositório — construção começando |
+| ReconKit | Python | [Everett-gi/reconkit](https://github.com/Everett-gi/reconkit) | 📋 Blueprint no repositório — construção começando |
+| MercadoLite | Ruby | [Everett-gi/mercadolite](https://github.com/Everett-gi/mercadolite) | 📋 Blueprint no repositório — construção começando |
+| Os outros 18 | — | — | 📋 Blueprint pronto, nesta central |
+
+Esses seis são os **projetos principais** — um por slot de repositório fixado no perfil do
+GitHub — e cobrem autenticação, criptografia, OSINT, privacidade, IA e e-commerce nas três
+linguagens. O `CLAUDE.md` de cada um é autossuficiente (blueprint, base de segurança,
+convenções e modo tutorial), pronto para ser trabalhado em qualquer ambiente, inclusive na
+nuvem.
 
 Clone os projetos em `C:\dev`, **fora do OneDrive** (motivos na
 [Lição 00](tutorial/00-ambiente.md#9-onedrive-uma-recomendação)):
@@ -113,7 +123,7 @@ Isto é o "Definition of Done" de segurança de qualquer projeto aqui:
 ## Sugestão de ordem
 
 **Carros-chefe primeiro** (1 por linguagem, completos e no ar):
-[DocSage](https://github.com/Everett-gi/docsage) ✅ → `java/authhub` → `ruby/mercadolite` (ou `ruby/flowboard`).
+[DocSage](https://github.com/Everett-gi/docsage) ✅ → [AuthHub](https://github.com/Everett-gi/authhub) → [MercadoLite](https://github.com/Everett-gi/mercadolite).
 Em paralelo, a trilha Python de aprendizado começou pelo [PwnCheck](https://github.com/Everett-gi/pwncheck).
 
 Depois, o restante por afinidade — Java para aprofundar segurança de backend,

@@ -39,9 +39,19 @@ Duas regras vieram junto:
 GitHub                                   Sua máquina
 ──────                                   ───────────
 Everett-gi/Projetos-e-ideias  (central)  C:\Users\gmnas\OneDrive\Documentos\Projetos e ideias
+Everett-gi/docsage                       C:\dev\docsage       (clone quando for estudá-lo)
 Everett-gi/pwncheck                      C:\dev\pwncheck
-Everett-gi/docsage                       (migração feita em outra sessão)
+Everett-gi/authhub                       C:\dev\authhub
+Everett-gi/secvault                      C:\dev\secvault
+Everett-gi/reconkit                      C:\dev\reconkit
+Everett-gi/mercadolite                   C:\dev\mercadolite
 ```
+
+Os seis são os **projetos principais**: um para cada repositório que o GitHub deixa fixar no
+perfil. Os quatro últimos foram criados logo depois do PwnCheck, com o mesmo `subtree split`,
+para serem construídos em sessões do Claude Code na nuvem. Por isso o `CLAUDE.md` de cada um
+é **autossuficiente**: traz o blueprint, a base de segurança, as convenções e o modo tutorial,
+sem depender de nada da central.
 
 O **Projetos-e-ideias** virou a central do portfólio: guarda os blueprints dos projetos que
 ainda não começaram, as convenções (README), o guia de deploy e esta trilha de aprendizado.

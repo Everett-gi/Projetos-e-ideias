@@ -30,7 +30,7 @@ anteriores.
 | 1 | **[PwnCheck](https://github.com/Everett-gi/pwncheck)** | hashlib, bytes × str, pytest, mocks, httpx, FastAPI, Pydantic, SQLAlchemy, Alembic, Docker | 🚧 fase 1 de 6 |
 | 2 | FileSentry | pathlib, leitura de arquivos em blocos, threads (watchdog), API externa com chave | 📋 |
 | 3 | ThreatScope | async/await com httpx, agendamento (APScheduler), upsert, paginação, API keys | 📋 |
-| 4 | ReconKit | DNS e WHOIS, cabeçalhos HTTP de segurança, arquitetura modular, relatórios | 📋 |
+| 4 | [ReconKit](https://github.com/Everett-gi/reconkit) | DNS e WHOIS, cabeçalhos HTTP de segurança, arquitetura modular, relatórios | 📋 |
 | 5 | PortPulse | asyncio a fundo, sockets TCP, semáforos, timeouts, interface web com HTMX | 📋 |
 | 6 | PhishGuard | machine learning: features, scikit-learn, avaliação e versionamento de modelo | 📋 |
 | 7 | LogLens | pandas, estatística, detecção de anomalias (Isolation Forest), dashboard | 📋 |
@@ -54,6 +54,17 @@ As lições de cada fase ficam no repositório do projeto, em `docs/tutorial/`.
 | 4 | API REST com FastAPI + autenticação | ⬜ |
 | 5 | Rate limit e métricas | ⬜ |
 | 6 | Deploy com HTTPS | ⬜ |
+
+## Trilhas Java e Ruby
+
+Os carros-chefe de Java e Ruby já têm repositório, e cada um é também o curso da linguagem
+(o `CLAUDE.md` deles pede analogias com C/C++ e uma lição por fase, em `docs/tutorial/`).
+
+| Linguagem | Projeto | O que ele ensina de novo | Status |
+|---|---|---|---|
+| Java | [AuthHub](https://github.com/Everett-gi/authhub) | Java e JVM, Maven, Spring Boot, Spring Security, JWT, OAuth2/OIDC, MFA, Flyway, Testcontainers | 📋 começando |
+| Java | [SecVault](https://github.com/Everett-gi/secvault) | criptografia aplicada com a JCA: AES-GCM, derivação de chave, *envelope encryption* | 📋 começando |
+| Ruby | [MercadoLite](https://github.com/Everett-gi/mercadolite) | Ruby, Rails 8, Active Record, Devise + Pundit, Stripe, webhooks e idempotência | 📋 começando |
 
 ## Pendências de ambiente
 

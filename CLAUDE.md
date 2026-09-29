@@ -25,8 +25,9 @@ virão Java e Ruby.
   `C:\dev\<projeto>` (fora do OneDrive). O `CLAUDE.md` do blueprint vai para lá, ganha as
   seções de modo tutorial e convenções, e a pasta sai daqui. Receita em
   `tutorial/02-um-repositorio-por-projeto.md`.
-- Repositórios existentes: https://github.com/Everett-gi/docsage (referência de qualidade)
-  e https://github.com/Everett-gi/pwncheck. A tabela completa está no README.
+- Repositórios dos 6 projetos principais (tabela no README): `docsage` (referência de
+  qualidade), `pwncheck`, `authhub`, `secvault`, `reconkit` e `mercadolite`, todos em
+  `https://github.com/Everett-gi/<projeto>`. O `CLAUDE.md` de cada um é autossuficiente.
 - Lições de cada fase ficam em `docs/tutorial/` do repositório do projeto; o índice
   `tutorial/README.md` daqui aponta para elas com URLs.
 - GitHub CLI (`gh`) instalado e logado. O token dele não tem o escopo `workflow`: faça o push
