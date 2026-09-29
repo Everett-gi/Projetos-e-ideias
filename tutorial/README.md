@@ -33,7 +33,7 @@ anteriores.
 | 5 | PortPulse | asyncio a fundo, sockets TCP, semáforos, timeouts, interface web com HTMX | 📋 |
 | 6 | PhishGuard | machine learning: features, scikit-learn, avaliação e versionamento de modelo | 📋 |
 | 7 | LogLens | pandas, estatística, detecção de anomalias (Isolation Forest), dashboard | 📋 |
-| — | DocSage | já está pronto: vira um estudo guiado do código depois do PwnCheck (RAG, pgvector, LLM) | ✅ pronto |
+| — | [DocSage](https://github.com/Everett-gi/docsage) | já está pronto (repositório próprio): vira um estudo guiado do código depois do PwnCheck (RAG, pgvector, LLM) | ✅ pronto |
 
 **Por que essa ordem?** O PwnCheck tem o menor escopo e passa pela pilha inteira uma vez
 (API, banco, Docker, CI). O FileSentry reaproveita os hashes e acrescenta arquivos e threads.

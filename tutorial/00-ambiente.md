@@ -329,6 +329,12 @@ DocSage estava em `python/docsage/.github/` e nunca rodaria. Ele foi movido para
 `.github/workflows/docsage-ci.yml`, com um filtro `paths:` para rodar só quando a pasta do
 DocSage muda. (O CI é explicado em detalhe na lição da fase 1 do PwnCheck.)
 
+> **Atualização:** depois, o DocSage ganhou repositório próprio,
+> [Everett-gi/docsage](https://github.com/Everett-gi/docsage). Lá, a raiz do repositório
+> **é** a raiz do projeto, então o CI voltou a ser um `.github/workflows/ci.yml` simples,
+> sem filtro `paths:`. O `docsage-ci.yml` saiu do monorepo. É a tabela acima na prática:
+> num repositório por projeto, o CI fica mais simples.
+
 ### Conventional Commits
 
 Todas as mensagens de commit seguem o formato `tipo(escopo): descrição`:
@@ -425,6 +431,7 @@ Depois recrie o `.venv` de cada projeto lá (seção 6). A pasta antiga pode ser
 4. Ativado: `...\pwncheck\.venv\Scripts\python.exe`. Depois do `deactivate`: o Python global,
    em `...\Programs\Python\Python312\python.exe`. A ativação só mexe no PATH.
 5. Veja você mesmo: a ideia é se acostumar a ler histórico.
-6. Os dois workflows (DocSage CI e PwnCheck CI) devem aparecer com ✅.
+6. O workflow PwnCheck CI deve aparecer com ✅. (O DocSage CI agora roda na aba Actions do
+   repositório próprio dele, `Everett-gi/docsage`.)
 
 </details>

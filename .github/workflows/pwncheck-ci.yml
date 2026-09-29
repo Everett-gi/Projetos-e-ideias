@@ -1,5 +1,5 @@
 # CI do PwnCheck: lint, formatação, testes e scans de segurança.
-# Fica na raiz porque o GitHub só lê workflows em /.github/workflows (ver docsage-ci.yml).
+# Fica na raiz porque o GitHub só lê workflows em /.github/workflows (detalhes na seção 8 de tutorial/00-ambiente.md).
 name: PwnCheck CI
 
 on:

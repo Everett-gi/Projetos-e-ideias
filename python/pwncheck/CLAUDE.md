@@ -1,7 +1,7 @@
 # PwnCheck — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md` e modo
-> tutorial em `../../CLAUDE.md`. Referência de qualidade: `../docsage`.
+> tutorial em `../../CLAUDE.md`. Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 > **Status:** 🚧 em construção — fase 1 concluída (cliente k-anonymity).
 
 ## O que é

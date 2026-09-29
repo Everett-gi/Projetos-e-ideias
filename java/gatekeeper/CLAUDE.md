@@ -1,7 +1,7 @@
 # GateKeeper — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../../python/docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## O que é
 Um **API Gateway** que autentica, aplica **rate limiting** e **quotas**, gerencia API keys e
