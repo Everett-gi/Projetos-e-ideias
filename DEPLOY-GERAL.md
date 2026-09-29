@@ -12,19 +12,15 @@ está detalhado no **[`docs/DEPLOY.md` do DocSage](https://github.com/Everett-gi
 (que tem repositório próprio). Ele serve para qualquer projeto deste portfólio; apenas
 troque o repositório, a pasta e o domínio.
 
-Resumo do fluxo para os projetos deste monorepo, uma vez que a VM já existe:
+Resumo do fluxo, uma vez que a VM já existe (cada projeto tem repositório próprio):
 
 ```bash
 ssh docsage                                   # conecta na VM
-git clone https://github.com/Everett-gi/Projetos-e-ideias.git
-cd Projetos-e-ideias/python/<projeto>        # monorepo: entre na pasta do projeto
+git clone https://github.com/Everett-gi/<projeto>.git && cd <projeto>
 nano .env                                      # .env de PRODUÇÃO, criado aqui (não vem do Git)
 chmod 600 .env
 docker compose -f docker-compose.prod.yml up -d --build
 ```
-
-O DocSage é a exceção: clone `https://github.com/Everett-gi/docsage.git` e rode da raiz
-dele (`cd docsage`), como descreve o DEPLOY.md dele.
 
 ## Rodando vários projetos na mesma VM
 

@@ -17,15 +17,21 @@ virão Java e Ruby.
   e uma entrada no índice `tutorial/README.md` (o progresso é marcado lá).
 - Termine cada lição com exercícios. Deixe o autor rodar os comandos sempre que possível.
 
-## Monorepo
+## Organização: central + um repositório por projeto
 
-- CI: um workflow por projeto em `.github/workflows/<projeto>-ci.yml`, com filtro
-  `paths:` e `defaults.run.working-directory`. O GitHub ignora `.github/` em subpastas.
-- Python: cada projeto tem o próprio `.venv` dentro da pasta do projeto.
-- **Exceção:** o DocSage tem repositório próprio (https://github.com/Everett-gi/docsage),
-  que é a fonte da verdade dele. Ele continua sendo a referência de qualidade dos outros
-  projetos; para consultá-lo, clone-o ao lado do monorepo (ex.: `C:\dev\docsage`).
-- Commits: Conventional Commits com escopo, ex.: `feat(pwncheck): ...`.
+- Este repositório é a **central**: blueprints dos projetos que ainda não começaram,
+  convenções (README), DEPLOY-GERAL e a trilha (`tutorial/`). Não há código aqui.
+- Projeto que começa ganha **repositório próprio** (`Everett-gi/<projeto>`), clonado em
+  `C:\dev\<projeto>` (fora do OneDrive). O `CLAUDE.md` do blueprint vai para lá, ganha as
+  seções de modo tutorial e convenções, e a pasta sai daqui. Receita em
+  `tutorial/02-um-repositorio-por-projeto.md`.
+- Repositórios existentes: https://github.com/Everett-gi/docsage (referência de qualidade)
+  e https://github.com/Everett-gi/pwncheck. A tabela completa está no README.
+- Lições de cada fase ficam em `docs/tutorial/` do repositório do projeto; o índice
+  `tutorial/README.md` daqui aponta para elas com URLs.
+- GitHub CLI (`gh`) instalado e logado. O token dele não tem o escopo `workflow`: faça o push
+  com `git push` (Credential Manager), não com `gh repo create --push`.
+- Commits: Conventional Commits (`feat:`, `fix:`, `docs:`, `test:`, `ci:`, `chore:`).
 
 ## Ambiente do autor
 

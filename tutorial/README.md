@@ -18,6 +18,7 @@ as ferramentas, a arquitetura e a segurança.
 |---|---|---|
 | 00 | [Ambiente: Python, venv, pip, VS Code e Git](00-ambiente.md) | ✅ |
 | 01 | [Python para quem vem do C/C++](01-python-para-quem-vem-do-c.md) | ✅ |
+| 02 | [Um repositório por projeto: git subtree e GitHub CLI](02-um-repositorio-por-projeto.md) | ✅ |
 
 ## Trilha Python — projetos em ordem de estudo
 
@@ -26,7 +27,7 @@ anteriores.
 
 | # | Projeto | O que ele ensina de novo | Status |
 |---|---|---|---|
-| 1 | **PwnCheck** | hashlib, bytes × str, pytest, mocks, httpx, FastAPI, Pydantic, SQLAlchemy, Alembic, Docker | 🚧 fase 1 de 6 |
+| 1 | **[PwnCheck](https://github.com/Everett-gi/pwncheck)** | hashlib, bytes × str, pytest, mocks, httpx, FastAPI, Pydantic, SQLAlchemy, Alembic, Docker | 🚧 fase 1 de 6 |
 | 2 | FileSentry | pathlib, leitura de arquivos em blocos, threads (watchdog), API externa com chave | 📋 |
 | 3 | ThreatScope | async/await com httpx, agendamento (APScheduler), upsert, paginação, API keys | 📋 |
 | 4 | ReconKit | DNS e WHOIS, cabeçalhos HTTP de segurança, arquitetura modular, relatórios | 📋 |
@@ -43,9 +44,11 @@ conceitos novos de uma vez.
 
 ### PwnCheck
 
+As lições de cada fase ficam no repositório do projeto, em `docs/tutorial/`.
+
 | Fase | Lição | Status |
 |---|---|---|
-| 1 | [Cliente k-anonymity: hashing, testes e mocks](../python/pwncheck/docs/tutorial/fase-1-k-anonymity.md) | ✅ |
+| 1 | [Cliente k-anonymity: hashing, testes e mocks](https://github.com/Everett-gi/pwncheck/blob/main/docs/tutorial/fase-1-k-anonymity.md) | ✅ |
 | 2 | Política de força de senha | ⬜ |
 | 3 | Cache de prefixos: PostgreSQL, SQLAlchemy, Alembic e Docker | ⬜ |
 | 4 | API REST com FastAPI + autenticação | ⬜ |

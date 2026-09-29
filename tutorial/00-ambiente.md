@@ -157,7 +157,7 @@ uma biblioteca em `/usr/lib`.
 Um **venv** é uma pasta com um `site-packages` exclusivo daquele projeto:
 
 ```powershell
-cd python\pwncheck
+cd C:\dev\pwncheck
 python -m venv .venv      # cria o ambiente na pasta .venv
 ```
 
@@ -207,7 +207,7 @@ e `ruff` passam a ser os do projeto. Sem ativar, dá no mesmo chamar pelo caminh
 
 ### Regras do venv
 
-- **Um `.venv` por projeto**, dentro da pasta do projeto (`python/pwncheck/.venv`).
+- **Um `.venv` por projeto**, dentro da pasta do projeto (`C:\dev\pwncheck\.venv`).
 - **Nunca vai para o Git** (está no `.gitignore`): ele é recriável a partir do
   `requirements.txt`, como uma pasta `build/`. Quebrou? Apague a pasta e recrie.
 - O `.venv` do PwnCheck tem ~59 MB e ~2.200 arquivos. Guarde esse número para a seção 9.
@@ -250,10 +250,10 @@ Extensões instaladas:
 | **Python Environments** | gerencia ambientes virtuais pela interface |
 | **Ruff** (`charliermarsh.ruff`) | mostra os avisos do lint enquanto você digita e formata o código |
 
-**Abra a pasta do PROJETO, não a raiz do repositório:**
+**Abra a pasta do PROJETO:**
 
 ```powershell
-code "C:\Users\gmnas\OneDrive\Documentos\Projetos e ideias\python\pwncheck"
+code C:\dev\pwncheck
 ```
 
 Assim o VS Code encontra o `.venv` sozinho. Confira no canto inferior direito se aparece
@@ -329,11 +329,14 @@ DocSage estava em `python/docsage/.github/` e nunca rodaria. Ele foi movido para
 `.github/workflows/docsage-ci.yml`, com um filtro `paths:` para rodar só quando a pasta do
 DocSage muda. (O CI é explicado em detalhe na lição da fase 1 do PwnCheck.)
 
-> **Atualização:** depois, o DocSage ganhou repositório próprio,
-> [Everett-gi/docsage](https://github.com/Everett-gi/docsage). Lá, a raiz do repositório
-> **é** a raiz do projeto, então o CI voltou a ser um `.github/workflows/ci.yml` simples,
-> sem filtro `paths:`. O `docsage-ci.yml` saiu do monorepo. É a tabela acima na prática:
-> num repositório por projeto, o CI fica mais simples.
+> **Atualização: mudamos de modelo.** Ainda na primeira sessão, decidimos que cada projeto em
+> construção ganha **repositório próprio** — [Everett-gi/docsage](https://github.com/Everett-gi/docsage)
+> e [Everett-gi/pwncheck](https://github.com/Everett-gi/pwncheck) foram os primeiros — e este
+> repositório virou a **central** do portfólio (blueprints, convenções e esta trilha). Num
+> repositório por projeto, a raiz do repositório **é** a raiz do projeto, e o CI volta a ser um
+> `.github/workflows/ci.yml` simples, sem filtro `paths:`. O porquê da troca e como ela foi
+> feita, preservando a história dos commits, estão na
+> [Lição 02](02-um-repositorio-por-projeto.md).
 
 ### Conventional Commits
 
@@ -386,16 +389,17 @@ cada arquivo alterado. Com código, isso atrapalha:
   "arquivo em uso" (`WinError 32`);
 - sincronizar a pasta `.git` no meio de uma operação pode corromper o repositório.
 
-Como tudo agora está no GitHub, **o GitHub já é o seu backup**. Quando quiser, passe a
-trabalhar numa pasta fora do OneDrive:
+Como tudo está no GitHub, **o GitHub já é o seu backup**. Por isso os projetos com código
+ficam em `C:\dev`, fora do OneDrive — o PwnCheck já está em `C:\dev\pwncheck`. Para trazer
+outro projeto:
 
 ```powershell
-mkdir C:\dev
 cd C:\dev
-git clone https://github.com/Everett-gi/Projetos-e-ideias.git
+git clone https://github.com/Everett-gi/docsage.git
 ```
 
-Depois recrie o `.venv` de cada projeto lá (seção 6). A pasta antiga pode ser apagada.
+Depois recrie o `.venv` do projeto lá (seção 6). A central (`Projetos-e-ideias`) pode continuar
+no OneDrive: ela só tem Markdown, sem `.venv` nem código.
 
 ---
 
@@ -431,7 +435,7 @@ Depois recrie o `.venv` de cada projeto lá (seção 6). A pasta antiga pode ser
 4. Ativado: `...\pwncheck\.venv\Scripts\python.exe`. Depois do `deactivate`: o Python global,
    em `...\Programs\Python\Python312\python.exe`. A ativação só mexe no PATH.
 5. Veja você mesmo: a ideia é se acostumar a ler histórico.
-6. O workflow PwnCheck CI deve aparecer com ✅. (O DocSage CI agora roda na aba Actions do
-   repositório próprio dele, `Everett-gi/docsage`.)
+6. Com a troca para um repositório por projeto (Lição 02), cada CI roda na aba Actions do
+   repositório do projeto: `Everett-gi/pwncheck` e `Everett-gi/docsage`, ambos com ✅.
 
 </details>

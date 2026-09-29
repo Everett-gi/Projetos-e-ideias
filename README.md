@@ -5,8 +5,9 @@
 
 ## Organização
 
-Os projetos vivem **neste repositório** (um *monorepo*). A exceção é o **DocSage**, já
-pronto, que tem repositório próprio: **[Everett-gi/docsage](https://github.com/Everett-gi/docsage)**.
+Este repositório é a **central do portfólio**. Cada projeto em construção tem
+**repositório próprio**; aqui ficam os blueprints dos projetos que ainda não começaram, as
+convenções compartilhadas (este README), o guia de deploy e a trilha de aprendizado.
 
 ```
 Projetos-e-ideias/
@@ -14,22 +15,32 @@ Projetos-e-ideias/
 ├── CLAUDE.md            (contexto do repositório para o Claude Code)
 ├── DEPLOY-GERAL.md      (deploy compartilhado na Oracle Cloud + notas por linguagem)
 ├── tutorial/            (trilha de aprendizado — comece por tutorial/README.md)
-├── .github/workflows/   (CI dos projetos daqui: um <projeto>-ci.yml para cada)
-├── java/                (backends de segurança — Spring Boot)
+├── java/                (blueprints: backends de segurança — Spring Boot)
 │   ├── authhub/         · securebank/  · secvault/   · siem-lite/
 │   └── audittrail/      · gatekeeper/  · helpdesk/    · linkshield/
-├── python/              (ferramentas de segurança + IA — FastAPI)
-│   ├── pwncheck/ 🚧     · threatscope/ · reconkit/    · portpulse/
+├── python/              (blueprints: ferramentas de segurança + IA — FastAPI)
+│   ├── threatscope/     · reconkit/    · portpulse/
 │   └── loglens/         · phishguard/  · filesentry/
-└── ruby/                (produtos web — Rails)
+└── ruby/                (blueprints: produtos web — Rails)
     ├── devforum/        · publicms/    · mercadolite/  · flowboard/
     └── edupath/         · agendaja/    · rachaconta/    · chatroom/
 ```
 
-Cada pasta de projeto tem um **`CLAUDE.md`**: o handoff completo (o que é, stack,
-modelo de dados, funcionalidades, segurança e plano de build). O DocSage já está
-**construído por inteiro** e serve de referência viva para todos os outros. Para
-consultá-lo localmente, clone-o **ao lado** do monorepo:
+Cada pasta de blueprint tem um **`CLAUDE.md`**: o handoff completo (o que é, stack,
+modelo de dados, funcionalidades, segurança e plano de build). Quando o projeto começa,
+esse `CLAUDE.md` vai para o repositório dele e a pasta sai daqui (receita na
+[Lição 02](tutorial/02-um-repositorio-por-projeto.md)).
+
+## Repositórios dos projetos
+
+| Projeto | Linguagem | Repositório | Status |
+|---|---|---|---|
+| DocSage | Python | [Everett-gi/docsage](https://github.com/Everett-gi/docsage) | ✅ Completo — referência de qualidade para os outros |
+| PwnCheck | Python | [Everett-gi/pwncheck](https://github.com/Everett-gi/pwncheck) | 🚧 Em construção (fase 1 de 6) |
+| Todos os demais | — | — | 📋 Blueprint pronto, nesta central |
+
+Clone os projetos em `C:\dev`, **fora do OneDrive** (motivos na
+[Lição 00](tutorial/00-ambiente.md#9-onedrive-uma-recomendação)):
 
 ```powershell
 cd C:\dev
@@ -42,22 +53,15 @@ Os projetos são construídos em **modo tutorial**: cada fase concluída vira um
 explicando o que foi feito e por quê. O índice completo, na ordem de estudo, está em
 **[tutorial/README.md](tutorial/README.md)**.
 
-## Status
-
-| Projeto | Linguagem | Status |
-|---|---|---|
-| [DocSage](https://github.com/Everett-gi/docsage) | Python | ✅ Completo (repositório próprio) |
-| PwnCheck | Python | 🚧 Em construção |
-| Todos os demais (22) | — | 📋 Blueprint pronto (a construir) |
-
 ## Como cada projeto é construído (fluxo)
 
 1. **Ler o `CLAUDE.md`** do projeto — ele é o mapa.
-2. **Scaffold** da estrutura seguindo o DocSage como referência (`app/`, `tests/`,
-   `pyproject.toml`, `requirements.txt`...). Cada arquivo de configuração é explicado na
-   lição correspondente — nada de copiar template sem entender.
-3. **Construir com o Claude Code** dentro da pasta do projeto, seguindo as fases do build.
-4. **Testar** localmente (`pytest`, depois `docker compose up`) e versionar neste repositório.
+2. **Criar o repositório do projeto** e o scaffold, seguindo o DocSage e o PwnCheck como
+   referência (receita na [Lição 02](tutorial/02-um-repositorio-por-projeto.md)). Cada
+   arquivo de configuração é explicado na lição correspondente — nada de copiar template
+   sem entender.
+3. **Construir com o Claude Code** no repositório do projeto, seguindo as fases do build.
+4. **Testar** localmente (`pytest`, depois `docker compose up`) e versionar.
 5. **Publicar** seguindo o `DEPLOY-GERAL.md`.
 
 > **Um projeto por vez, do começo ao fim.** Um portfólio de 4 projetos completos e no ar
@@ -100,16 +104,17 @@ Isto é o "Definition of Done" de segurança de qualquer projeto aqui:
 - Type hints / tipos explícitos sempre.
 - Toda função pura nova vem acompanhada de teste.
 - Mensagens de erro da API em português (é o usuário que lê).
-- Commits no padrão *Conventional Commits*, com o projeto como escopo:
-  `feat(pwncheck): ...`, `fix(authhub): ...`, `docs: ...`, `test: ...`, `ci: ...`, `chore: ...`.
-- **Monorepo:** cada projeto tem seu próprio workflow em `.github/workflows/<projeto>-ci.yml`
-  (o GitHub só lê workflows na raiz), filtrado por `paths:` para rodar só quando a pasta
-  daquele projeto muda.
+- Commits no padrão *Conventional Commits*: `feat: ...`, `fix: ...`, `docs: ...`,
+  `test: ...`, `ci: ...`, `chore: ...`.
+- **Um repositório por projeto**, com o CI em `.github/workflows/ci.yml` e um `CLAUDE.md`
+  que traz o blueprint, as convenções e as regras do modo tutorial — cada repositório tem que
+  fazer sentido sozinho.
 
 ## Sugestão de ordem
 
 **Carros-chefe primeiro** (1 por linguagem, completos e no ar):
 [DocSage](https://github.com/Everett-gi/docsage) ✅ → `java/authhub` → `ruby/mercadolite` (ou `ruby/flowboard`).
+Em paralelo, a trilha Python de aprendizado começou pelo [PwnCheck](https://github.com/Everett-gi/pwncheck).
 
 Depois, o restante por afinidade — Java para aprofundar segurança de backend,
 Python para o ferramental de segurança, Ruby para produtos web.
