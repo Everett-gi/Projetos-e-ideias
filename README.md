@@ -60,8 +60,17 @@ git clone https://github.com/Everett-gi/docsage.git     # fica em C:\dev\docsage
 ## Trilha de aprendizado
 
 Os projetos são construídos em **modo tutorial**: cada fase concluída vira uma lição
-explicando o que foi feito e por quê. O índice completo, na ordem de estudo, está em
-**[tutorial/README.md](tutorial/README.md)**.
+explicando o que foi feito e por quê. O índice completo, com a ordem de estudo e o progresso,
+está em **[tutorial/README.md](tutorial/README.md)**. Os tutoriais disponíveis:
+
+| Tutorial | Repositório | Para quê |
+|---|---|---|
+| [00 — Ambiente](tutorial/00-ambiente.md) | central | Python, venv, pip, VS Code, Git — o que foi instalado e como funciona |
+| [01 — Python para quem vem do C/C++](tutorial/01-python-para-quem-vem-do-c.md) | central | o modelo mental do Python a partir do C/C++, com exercícios |
+| [02 — Um repositório por projeto](tutorial/02-um-repositorio-por-projeto.md) | central | a organização do portfólio, `git subtree` e GitHub CLI |
+| [PwnCheck — Fase 1: cliente k-anonymity](https://github.com/Everett-gi/pwncheck/blob/main/docs/tutorial/fase-1-k-anonymity.md) | pwncheck | hashing, `str` × `bytes`, pytest, mocks de rede, ruff e CI |
+| [DocSage — Passo a passo](https://github.com/Everett-gi/docsage/blob/main/docs/PASSO-A-PASSO.md) | docsage | **usar o DocSage**: WSL 2 + Docker, chave da API, `.env`, rodar e testar |
+| [DocSage — Deploy](https://github.com/Everett-gi/docsage/blob/main/docs/DEPLOY.md) | docsage | colocar um projeto no ar na Oracle Cloud (grátis), com HTTPS — serve para todos |
 
 ## Como cada projeto é construído (fluxo)
 

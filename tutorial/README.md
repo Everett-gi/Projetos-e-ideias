@@ -55,6 +55,16 @@ As lições de cada fase ficam no repositório do projeto, em `docs/tutorial/`.
 | 5 | Rate limit e métricas | ⬜ |
 | 6 | Deploy com HTTPS | ⬜ |
 
+### DocSage
+
+O DocSage já está pronto; os guias dele ficam no repositório do projeto. O estudo guiado do
+código (RAG, pgvector, LLM) vira lição depois do PwnCheck.
+
+| Guia | Para quê |
+|---|---|
+| [Passo a passo](https://github.com/Everett-gi/docsage/blob/main/docs/PASSO-A-PASSO.md) | **usar o DocSage** na sua máquina: WSL 2 + Docker, chave da API, `.env`, rodar e testar |
+| [Deploy](https://github.com/Everett-gi/docsage/blob/main/docs/DEPLOY.md) | colocar no ar na Oracle Cloud (grátis), com HTTPS — o modelo para todos os projetos |
+
 ## Trilhas Java e Ruby
 
 Os carros-chefe de Java e Ruby já têm repositório, e cada um é também o curso da linguagem
