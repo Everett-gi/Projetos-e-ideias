@@ -1,7 +1,7 @@
 # LinkShield — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../../python/docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## O que é
 Encurtador de URL com **analytics**, links com expiração/senha e **proteção contra links

@@ -22,6 +22,9 @@ virão Java e Ruby.
 - CI: um workflow por projeto em `.github/workflows/<projeto>-ci.yml`, com filtro
   `paths:` e `defaults.run.working-directory`. O GitHub ignora `.github/` em subpastas.
 - Python: cada projeto tem o próprio `.venv` dentro da pasta do projeto.
+- **Exceção:** o DocSage tem repositório próprio (https://github.com/Everett-gi/docsage),
+  que é a fonte da verdade dele. Ele continua sendo a referência de qualidade dos outros
+  projetos; para consultá-lo, clone-o ao lado do monorepo (ex.: `C:\dev\docsage`).
 - Commits: Conventional Commits com escopo, ex.: `feat(pwncheck): ...`.
 
 ## Ambiente do autor

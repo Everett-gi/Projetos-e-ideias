@@ -8,10 +8,11 @@ por linguagem (porta interna, variáveis de produção).
 
 O passo a passo completo — criar a conta Oracle, gerar a chave SSH, criar a VM ARM, abrir
 o firewall (o duplo firewall!), instalar Docker, configurar DuckDNS e subir com Caddy —
-está detalhado em **`python/docsage/docs/DEPLOY.md`**. Ele serve para qualquer projeto
-deste portfólio; apenas troque o nome do repositório e o domínio.
+está detalhado no **[`docs/DEPLOY.md` do DocSage](https://github.com/Everett-gi/docsage/blob/main/docs/DEPLOY.md)**
+(que tem repositório próprio). Ele serve para qualquer projeto deste portfólio; apenas
+troque o repositório, a pasta e o domínio.
 
-Resumo do fluxo, uma vez que a VM já existe:
+Resumo do fluxo para os projetos deste monorepo, uma vez que a VM já existe:
 
 ```bash
 ssh docsage                                   # conecta na VM
@@ -21,6 +22,9 @@ nano .env                                      # .env de PRODUÇÃO, criado aqui
 chmod 600 .env
 docker compose -f docker-compose.prod.yml up -d --build
 ```
+
+O DocSage é a exceção: clone `https://github.com/Everett-gi/docsage.git` e rode da raiz
+dele (`cd docsage`), como descreve o DEPLOY.md dele.
 
 ## Rodando vários projetos na mesma VM
 
@@ -53,7 +57,7 @@ mercado-gil.duckdns.org   { reverse_proxy mercadolite-app:3000 }
 
 ### Python (FastAPI)
 - Porta interna: **8080** (uvicorn).
-- Detalhes completos no `docsage/docs/DEPLOY.md` (é o modelo).
+- Detalhes completos no [`docs/DEPLOY.md` do DocSage](https://github.com/Everett-gi/docsage/blob/main/docs/DEPLOY.md) (é o modelo).
 - Projetos com modelo de ML/embeddings: a 1ª build é lenta (baixa PyTorch) — normal.
 - Migrations com Alembic: rode `alembic upgrade head` na subida (entrypoint ou comando).
 

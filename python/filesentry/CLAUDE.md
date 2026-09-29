@@ -1,7 +1,7 @@
 # FileSentry — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## O que é
 Monitor de **integridade de arquivos** (FIM/HIDS leve): estabelece um baseline de hashes,

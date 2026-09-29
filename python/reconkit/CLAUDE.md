@@ -1,7 +1,7 @@
 # ReconKit — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## ⚠️ Ética e escopo
 Ferramenta de **OSINT passivo**. Deve operar **apenas em alvos que você possui ou tem

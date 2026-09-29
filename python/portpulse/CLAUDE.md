@@ -1,7 +1,7 @@
 # PortPulse — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## ⚠️ Ética e escopo
 Scanner de portas para **auditar a sua própria infraestrutura**. Só escaneia alvos numa

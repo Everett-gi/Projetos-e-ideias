@@ -1,7 +1,7 @@
 # EduPath — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../../python/docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## O que é
 Plataforma de cursos (**LMS**) com módulos, aulas, **progresso do aluno**, quizzes com

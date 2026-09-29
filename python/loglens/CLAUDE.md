@@ -1,7 +1,7 @@
 # LogLens — Contexto do Projeto
 
 > Handoff para o Claude Code. Convenções compartilhadas em `../../README.md`.
-> **Status:** blueprint (a construir). Referência de qualidade: `../docsage`.
+> **Status:** blueprint (a construir). Referência de qualidade: [DocSage](https://github.com/Everett-gi/docsage).
 
 ## O que é
 Ingere logs, extrai padrões e **sinaliza anomalias** (picos, sequências suspeitas) com um

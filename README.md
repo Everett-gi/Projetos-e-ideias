@@ -5,7 +5,8 @@
 
 ## Organização
 
-Todos os projetos vivem **neste repositório** (um *monorepo*).
+Os projetos vivem **neste repositório** (um *monorepo*). A exceção é o **DocSage**, já
+pronto, que tem repositório próprio: **[Everett-gi/docsage](https://github.com/Everett-gi/docsage)**.
 
 ```
 Projetos-e-ideias/
@@ -13,13 +14,13 @@ Projetos-e-ideias/
 ├── CLAUDE.md            (contexto do repositório para o Claude Code)
 ├── DEPLOY-GERAL.md      (deploy compartilhado na Oracle Cloud + notas por linguagem)
 ├── tutorial/            (trilha de aprendizado — comece por tutorial/README.md)
-├── .github/workflows/   (CI de TODOS os projetos: um <projeto>-ci.yml para cada)
+├── .github/workflows/   (CI dos projetos daqui: um <projeto>-ci.yml para cada)
 ├── java/                (backends de segurança — Spring Boot)
 │   ├── authhub/         · securebank/  · secvault/   · siem-lite/
 │   └── audittrail/      · gatekeeper/  · helpdesk/    · linkshield/
 ├── python/              (ferramentas de segurança + IA — FastAPI)
-│   ├── docsage/  ✅      · threatscope/ · reconkit/    · portpulse/
-│   └── loglens/         · phishguard/  · pwncheck/ 🚧  · filesentry/
+│   ├── pwncheck/ 🚧     · threatscope/ · reconkit/    · portpulse/
+│   └── loglens/         · phishguard/  · filesentry/
 └── ruby/                (produtos web — Rails)
     ├── devforum/        · publicms/    · mercadolite/  · flowboard/
     └── edupath/         · agendaja/    · rachaconta/    · chatroom/
@@ -27,7 +28,13 @@ Projetos-e-ideias/
 
 Cada pasta de projeto tem um **`CLAUDE.md`**: o handoff completo (o que é, stack,
 modelo de dados, funcionalidades, segurança e plano de build). O DocSage já está
-**construído por inteiro** e serve de referência viva para todos os outros.
+**construído por inteiro** e serve de referência viva para todos os outros. Para
+consultá-lo localmente, clone-o **ao lado** do monorepo:
+
+```powershell
+cd C:\dev
+git clone https://github.com/Everett-gi/docsage.git     # fica em C:\dev\docsage
+```
 
 ## Trilha de aprendizado
 
@@ -39,7 +46,7 @@ explicando o que foi feito e por quê. O índice completo, na ordem de estudo, e
 
 | Projeto | Linguagem | Status |
 |---|---|---|
-| DocSage | Python | ✅ Completo |
+| [DocSage](https://github.com/Everett-gi/docsage) | Python | ✅ Completo (repositório próprio) |
 | PwnCheck | Python | 🚧 Em construção |
 | Todos os demais (22) | — | 📋 Blueprint pronto (a construir) |
 
@@ -94,7 +101,7 @@ Isto é o "Definition of Done" de segurança de qualquer projeto aqui:
 - Toda função pura nova vem acompanhada de teste.
 - Mensagens de erro da API em português (é o usuário que lê).
 - Commits no padrão *Conventional Commits*, com o projeto como escopo:
-  `feat(pwncheck): ...`, `fix(docsage): ...`, `docs: ...`, `test: ...`, `ci: ...`, `chore: ...`.
+  `feat(pwncheck): ...`, `fix(authhub): ...`, `docs: ...`, `test: ...`, `ci: ...`, `chore: ...`.
 - **Monorepo:** cada projeto tem seu próprio workflow em `.github/workflows/<projeto>-ci.yml`
   (o GitHub só lê workflows na raiz), filtrado por `paths:` para rodar só quando a pasta
   daquele projeto muda.
@@ -102,7 +109,7 @@ Isto é o "Definition of Done" de segurança de qualquer projeto aqui:
 ## Sugestão de ordem
 
 **Carros-chefe primeiro** (1 por linguagem, completos e no ar):
-`python/docsage` ✅ → `java/authhub` → `ruby/mercadolite` (ou `ruby/flowboard`).
+[DocSage](https://github.com/Everett-gi/docsage) ✅ → `java/authhub` → `ruby/mercadolite` (ou `ruby/flowboard`).
 
 Depois, o restante por afinidade — Java para aprofundar segurança de backend,
 Python para o ferramental de segurança, Ruby para produtos web.
